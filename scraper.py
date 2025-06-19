@@ -68,7 +68,7 @@ for sale in sales_url :
 
         sales_data.append(infos)
         time.sleep(random.uniform(2, 5))
-        
+
         """now we create a dictionnary infos and loop to get all the infos together, they are under the html balise <h3> for the key and 
         <p> for the value. 
         Once the loop finished, we append the sales_data list with infos and add some random time before getting the next request"""
@@ -77,3 +77,8 @@ for sale in sales_url :
         print(f"Erreur avec {sale} : {e}")
     print(sales_data)
 
+import csv
+df = pd.DataFrame(data=sales_data)
+
+print(df)
+df.to_csv('immovlan_raw_data.csv', index=False, encoding='utf-8')
