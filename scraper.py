@@ -77,8 +77,8 @@ for sale in sales_url :
         print(f"Erreur avec {sale} : {e}")
     print(sales_data)
 
-import csv
-df = pd.DataFrame(data=sales_data)
+df = pd.DataFrame(data=sales_data, columns=['url', 'Données de base', 'Équipement', 'Certificats et attestations de conformité', 'Urbanisme et risques environnementaux', 'Aménagement intérieur', 'Cuisine et sanitaires', 'Description extérieure', 'Chauffage et énergie'])
+print(df.columns)
+df.to_csv('immovlan_raw_data_new_v2.csv', index=False, header=True, encoding='utf-8')
 
-print(df)
-df.to_csv('immovlan_raw_data.csv', index=False, encoding='utf-8')
+"""we use pandas to get the data in a csv file and get the columns. After this, we can open the file with the csv viewer to go trough the dataframe"""
